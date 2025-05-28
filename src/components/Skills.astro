@@ -1,0 +1,186 @@
+---
+import { skills, languages } from '../data/Info';
+---
+
+
+
+
+<div id="habilidades" class="skills-section">
+    <div class="skills-container">
+        <h2 class="skills-title">Habilidades</h2>
+        
+        <div class="skills-grid">
+            {skills.map(skillGroup => (
+                <div class="skill-group">
+                    <div class="skill-group-bg"></div>
+                    <div class="skill-group-content">
+                        <h3 class="skill-category">{skillGroup.category}</h3>
+                        <div class="skills-list">
+                            {skillGroup.items.map(skill => (
+                                <span class="skill-item">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="languages-section">
+            <h3 class="languages-title">Idiomas</h3>
+            <div class="languages-grid">
+                {languages.map(language => (
+                    <div class="language-item">
+                        <h4 class="language-name">{language.name}</h4>
+                        <p class="language-level">{language.level}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skills-section {
+        position: relative;
+        margin-top: 0;
+        background: linear-gradient(to bottom, rgba(147, 51, 234, 0.2), rgba(88, 28, 135, 0.3), transparent);
+        padding: 8rem 0;
+    }
+    
+    .skills-container {
+        position: relative;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    
+    .skills-title {
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: -0.025em;
+        color: white;
+        margin-bottom: 3rem;
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 64rem;
+        margin: 0 auto;
+    }
+    
+    .skill-group {
+        position: relative;
+        height: 100%;
+    }
+    
+    .skill-group-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(147, 51, 234, 0.2);
+        filter: blur(24px);
+        transition: background-color 0.3s ease;
+    }
+    
+    .skill-group:hover .skill-group-bg {
+        background: rgba(147, 51, 234, 0.3);
+    }
+    
+    .skill-group-content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 100%;
+    }
+    
+    .skill-category {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 1rem;
+    }
+    
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .skill-item {
+        background: rgba(88, 28, 135, 0.5);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        border: 1px solid rgba(126, 34, 206, 0.3);
+    }
+    
+    .languages-section {
+        margin-top: 4rem;
+    }
+    
+    .languages-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 2rem;
+    }
+    
+    .languages-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+    
+    .language-item {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        min-width: 200px;
+    }
+    
+    .language-name {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+    
+    .language-level {
+        color: rgb(196, 181, 253);
+    }
+    
+    @media (min-width: 640px) {
+        .skills-container {
+            padding: 0 1.5rem;
+        }
+        
+        .skills-title {
+            font-size: 3.75rem;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .skills-container {
+            padding: 0 2rem;
+        }
+    }
+    </style>

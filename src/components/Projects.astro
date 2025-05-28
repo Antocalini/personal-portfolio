@@ -1,0 +1,140 @@
+---
+import { projects } from '../data/Info';
+---
+
+<div id="proyectos" class="projects-container">
+    <div class="projects-wrapper">
+        <h2 class="projects-title">Proyectos</h2>
+        
+        <div class="projects-grid">
+            {projects.map(project => (
+                <div class="project-card">
+                    <div class="project-card-bg"></div>
+                    <div class="project-card-content">
+                        <h3 class="project-name">{project.name}</h3>
+                        <p class="project-description">{project.description}</p>
+                        <div class="project-technologies">
+                            {project.technologies.map(tech => (
+                                <span class="tech-tag">
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .projects-container {
+        position: relative;
+        margin-top: 0;
+        background: linear-gradient(to bottom, transparent, rgba(88, 28, 135, 0.3), rgba(147, 51, 234, 0.2));
+        padding: 8rem 0;
+    }
+    
+    .projects-wrapper {
+        position: relative;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    
+    .projects-title {
+        font-size: 2.25rem;
+        font-weight: bold;
+        letter-spacing: -0.025em;
+        color: white;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .project-card {
+        position: relative;
+        height: 100%;
+    }
+    
+    .project-card-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(147, 51, 234, 0.2);
+        filter: blur(24px);
+        transition: background-color 0.3s ease;
+    }
+    
+    .project-card:hover .project-card-bg {
+        background: rgba(147, 51, 234, 0.3);
+    }
+    
+    .project-card-content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .project-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+    
+    .project-description {
+        color: rgb(209, 213, 219);
+        margin-bottom: 1rem;
+        flex-grow: 1;
+    }
+    
+    .project-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: auto;
+    }
+    
+    .tech-tag {
+        background: rgba(88, 28, 135, 0.5);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        border: 1px solid rgba(126, 34, 206, 0.3);
+    }
+    
+    @media (min-width: 640px) {
+        .projects-wrapper {
+            padding: 0 1.5rem;
+        }
+        
+        .projects-title {
+            font-size: 3rem;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .projects-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .projects-wrapper {
+            padding: 0 2rem;
+        }
+    }
+    </style>

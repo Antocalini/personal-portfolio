@@ -1,0 +1,112 @@
+--- 
+import { personalInfo } from '../data/Info';
+---
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <a href="/" class="logo-link">
+                    <div class="logo">
+                        <span class="logo-text">{personalInfo.name.charAt(0)}</span>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="#experiencia" class="nav-link">Experiencia</a>
+                    <a href="#habilidades" class="nav-link">Habilidades</a>
+                
+                    <a href="#proyectos" class="nav-link">Proyectos</a>
+                </div>
+            </div>
+            <a href="#contacto" class="contact-btn">
+                Contactar
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
+
+    .navbar-container {
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .navbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        margin: 0.5rem 0;
+    }
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .logo {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+        background-color: #9333ea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-text {
+        color: white;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+        }
+    }
+
+    .nav-link {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .contact-btn {
+        background-color: #9333ea;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-btn:hover {
+        background-color: #7c3aed;
+    }
+</style>

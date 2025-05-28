@@ -1,0 +1,209 @@
+---
+import { experience } from '../data/Info';
+---
+
+
+<div id="experiencia" class="experience-section">
+    <div class="experience-container">
+        <h2 class="experience-title">Experiencia</h2>
+        
+        <div class="experience-grid">
+            {experience.map((job, index) => (
+                <div class="experience-item">
+                    <div class="experience-item-bg"></div>
+                    <div class="experience-item-content">
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h3 class="job-position">{job.position}</h3>
+                                <div class="job-company">{job.company}</div>
+                                <div class="job-period">{job.period}</div>
+                            </div>
+                            <div class="experience-details">
+                                <p class="job-description">{job.description}</p>
+                                <h4 class="achievements-title">Logros destacados:</h4>
+                                <ul class="achievements-list">
+                                    {job.achievements.map(achievement => (
+                                        <li class="achievement-item">
+                                            <svg class="achievement-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span class="achievement-text">{achievement}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+.experience-section {
+    position: relative;
+    margin-top: 5rem;
+    background: linear-gradient(to bottom, transparent, rgba(147, 51, 234, 0.2), rgba(88, 28, 135, 0.3));
+    padding: 8rem 0;
+}
+
+.experience-container {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .experience-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .experience-container {
+        padding: 0 2rem;
+    }
+}
+
+.experience-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: white;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .experience-title {
+        font-size: 3rem;
+    }
+}
+
+.experience-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.experience-item {
+    position: relative;
+    group: true;
+}
+
+.experience-item-bg {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(147, 51, 234, 0.2);
+    filter: blur(3rem);
+    transition: background-color 0.3s ease;
+}
+
+.experience-item:hover .experience-item-bg {
+    background-color: rgba(147, 51, 234, 0.3);
+}
+
+.experience-item-content {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 640px) {
+    .experience-item-content {
+        padding: 2rem;
+    }
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .experience-content {
+        flex-direction: row;
+    }
+}
+
+.experience-header {
+    flex: 0 0 33.333333%;
+}
+
+@media (min-width: 768px) {
+    .experience-header {
+        width: 33.333333%;
+    }
+}
+
+.job-position {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.job-company {
+    font-size: 1.25rem;
+    color: rgb(196, 181, 253);
+    margin-bottom: 0.5rem;
+}
+
+.job-period {
+    color: rgb(156, 163, 175);
+    margin-bottom: 1rem;
+}
+
+.experience-details {
+    flex: 0 0 66.666667%;
+}
+
+@media (min-width: 768px) {
+    .experience-details {
+        width: 66.666667%;
+    }
+}
+
+.job-description {
+    color: rgb(209, 213, 219);
+    margin-bottom: 1rem;
+}
+
+.achievements-title {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.achievement-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    color: rgb(168, 85, 247);
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.achievement-text {
+    color: rgb(209, 213, 219);
+}
+</style>

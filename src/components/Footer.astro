@@ -1,0 +1,127 @@
+---
+import { personalInfo } from '../data/Info';
+---
+ 
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-avatar">
+                    <span class="footer-avatar-text">{personalInfo.name.charAt(0)}</span>
+                </div>
+                <span class="footer-name">{personalInfo.name}</span>
+            </div>
+            
+            <div class="footer-social">
+                <a href={personalInfo.linkedin} target="_blank" class="footer-link">
+                    <i class="fab fa-linkedin footer-icon"></i>
+                </a>
+                <a href={personalInfo.github} target="_blank" class="footer-link">
+                    <i class="fab fa-github footer-icon"></i>
+                </a>
+                <a href={`mailto:${personalInfo.email}`} class="footer-link">
+                    <i class="fas fa-envelope footer-icon"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            &copy; {new Date().getFullYear()} {personalInfo.name}. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        position: relative;
+        margin-top: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(to bottom, rgba(147, 51, 234, 0.1), black);
+    }
+
+    .footer-container {
+        margin: 0 auto;
+        max-width: 80rem;
+        padding: 2rem 1rem;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .footer-avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+        background-color: rgb(147, 51, 234);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+    }
+
+    .footer-avatar-text {
+        color: white;
+        font-weight: bold;
+    }
+
+    .footer-name {
+        color: white;
+        font-weight: 500;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .footer-link {
+        color: rgb(156, 163, 175);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+        color: white;
+    }
+
+    .footer-icon {
+        font-size: 1.25rem;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: rgb(107, 114, 128);
+        font-size: 0.875rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-container {
+            padding: 2rem 1.5rem;
+        }
+
+        .footer-content {
+            flex-direction: row;
+        }
+
+        .footer-brand {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-container {
+            padding: 2rem 2rem;
+        }
+    }
+</style>
