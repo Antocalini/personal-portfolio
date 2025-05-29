@@ -1,5 +1,4 @@
 function validateAndLogFormData() {
-  // Get form inputs
   const form = document.getElementById("contact-form");
   const nameInput = form.querySelector('input[type="text"]');
   const emailInput = form.querySelector('input[type="email"]');
@@ -78,7 +77,6 @@ document
 
     if (result.success) {
       displayMessage("¡Gracias por tu mensaje! Te contactaré pronto.", false);
-      // Reset form
       this.reset();
     } else {
       const errorList = result.errors

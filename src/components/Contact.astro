@@ -7,13 +7,13 @@ import { personalInfo } from '../data/Info';
     <div class="contact-container">
         <h2 class="contact-title">Contacto</h2>
         <p class="contact-description">
-            ¿Interesado en trabajar juntos? Ponte en contacto conmigo a través del formulario o directamente por email.
+            ¿Interesado en trabajar juntos? Ponte en contacto conmigo.
         </p>
 
         <div class="contact-info">
             <div class="contact-item">
                 <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope">📧</i>
                 </div>
                 <a href={`mailto:${personalInfo.email}`} class="contact-link">
                     {personalInfo.email}
@@ -21,7 +21,7 @@ import { personalInfo } from '../data/Info';
             </div>
             <div class="contact-item">
                 <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-phone">📱</i>
                 </div>
                 <a href={`tel:${personalInfo.phone}`} class="contact-link">
                     {personalInfo.phone}
@@ -29,7 +29,7 @@ import { personalInfo } from '../data/Info';
             </div>
             <div class="contact-item">
                 <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt">📍</i>
                 </div>
                 <span class="contact-text">{personalInfo.location}</span>
             </div>

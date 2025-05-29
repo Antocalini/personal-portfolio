@@ -6,7 +6,7 @@ export const personalInfo = {
   name: "Antonio Calini",
   title: "Desarrollador Full Stack",
   summary:
-    "Especializado en crear experiencias digitales atractivas y funcionales con más de 5 años de experiencia en desarrollo web y móvil.",
+    "Especializado en crear experiencias digitales atractivas y funcionales con más de 4 años de experiencia en desarrollo web y móvil.",
   location: "Maracaibo, Zulia",
   email: "xiaocalini@gmail.com",
   phone: "+58 414 555 55 55",
@@ -56,7 +56,7 @@ export const experience = [
 export const testimonials = [
   {
     text: "Trabajar con este desarrollador fue una experiencia increíble. Entregó código de alta calidad a tiempo y superó nuestras expectativas completamente.",
-    name: "Crisitano Ronaldo",
+    name: "Cristiano Ronaldo",
     position: "CTO",
     company: "CR7",
     avatar: "/images/cristiano.jpg",
@@ -160,8 +160,7 @@ export const projects = [
   },
   {
     name: "Portfolio Website",
-    description:
-      "Sitio web de portafolio personal con animaciones avanzadas y diseño responsivo.",
+    description: "Sitio web de portafolio personal con diseño responsivo.",
     technologies: ["Astro", "HTML5", "CSS3", "JavaScript"],
   },
 ];
