@@ -9,8 +9,6 @@ export const personalInfo = {
     "Especializado en crear experiencias digitales atractivas y funcionales con más de 4 años de experiencia en desarrollo web y móvil.",
   location: "Maracaibo, Zulia",
   email: "xiaocalini@gmail.com",
-  phone: "+58 414 555 55 55",
-  linkedin: "https://linkedin.com/in/",
   github: "https://github.com/antocalini",
 };
 
